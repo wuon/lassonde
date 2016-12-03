@@ -12,6 +12,7 @@ var leftButtons = [];
 var gameSpeed;
 var speed;
 var speedCounter;
+var gameState;
 
 Template.hello.onCreated(function helloOnCreated() {
   // counter starts at 0
@@ -51,58 +52,94 @@ Template.grid.events({
 });
 
 listener.simple_combo("q", function() {
-  buttonOff(leftButtons, 0, 1);
+  if(gameState == 0){
+    buttonOff(leftButtons, 0, 1);
+  }
 });
 listener.simple_combo("w", function() {
-  buttonOff(leftButtons, 1, 1);
+  if(gameState == 0){
+    buttonOff(leftButtons, 1, 1);
+  }
 });
 listener.simple_combo("e", function() {
-  buttonOff(leftButtons, 2, 1);
+  if(gameState == 0){
+    buttonOff(leftButtons, 2, 1);
+  }
 });
 listener.simple_combo("a", function() {
-  buttonOff(leftButtons, 3, 1);
+  if(gameState == 0){
+    buttonOff(leftButtons, 3, 1);
+  }
 });
 listener.simple_combo("s", function() {
-  buttonOff(leftButtons, 4, 1);
+  if(gameState == 0){
+    buttonOff(leftButtons, 4, 1);
+  }
 });
 listener.simple_combo("d", function() {
-  buttonOff(leftButtons, 5, 1);
+  if(gameState == 0){
+    buttonOff(leftButtons, 5, 1);
+  }
 });
 listener.simple_combo("z", function() {
-  buttonOff(leftButtons, 6, 1);
+  if(gameState == 0){
+    buttonOff(leftButtons, 6, 1);
+  }
 });
 listener.simple_combo("x", function() {
-  buttonOff(leftButtons, 7, 1);
+  if(gameState == 0){
+    buttonOff(leftButtons, 7, 1);
+  }
 });
 listener.simple_combo("c", function() {
-  buttonOff(leftButtons, 8, 1);
+  if(gameState == 0){
+    buttonOff(leftButtons, 8, 1);
+  }
 });
 listener.simple_combo("t", function() {
-  buttonOff(rightButtons, 0, 2);
+  if(gameState == 0){
+    buttonOff(rightButtons, 0, 2);
+  }
 });
 listener.simple_combo("y", function() {
-  buttonOff(rightButtons, 1, 2);
+  if(gameState == 0){
+    buttonOff(rightButtons, 1, 2);
+  }
 });
 listener.simple_combo("u", function() {
-  buttonOff(rightButtons, 2, 2);
+  if(gameState == 0){
+    buttonOff(rightButtons, 2, 2);
+  }
 });
 listener.simple_combo("g", function() {
-  buttonOff(rightButtons, 3, 2);
+  if(gameState == 0){
+    buttonOff(rightButtons, 3, 2);
+  }
 });
 listener.simple_combo("h", function() {
-  buttonOff(rightButtons, 4, 2);
+  if(gameState == 0){
+    buttonOff(rightButtons, 4, 2);
+  }
 });
 listener.simple_combo("j", function() {
-  buttonOff(rightButtons, 5, 2);
+  if(gameState == 0){
+    buttonOff(rightButtons, 5, 2);
+  }
 });
 listener.simple_combo("b", function() {
-  buttonOff(rightButtons, 6, 2);
+  if(gameState == 0){
+    buttonOff(rightButtons, 6, 2);
+  }
 });
 listener.simple_combo("n", function() {
-  buttonOff(rightButtons, 7, 2);
+  if(gameState == 0){
+    buttonOff(rightButtons, 7, 2);
+  }
 });
 listener.simple_combo("m", function() {
-  buttonOff(rightButtons, 8, 2);
+  if(gameState == 0){
+    buttonOff(rightButtons, 8, 2);
+  }
 });
 
 function startgame(){
@@ -110,6 +147,7 @@ function startgame(){
   score2 = 0;
   speed = 700;
   speedCounter = 0;
+  gameState = 0;
   initButtons(rightButtons);
   initButtons(leftButtons);
   console.log(rightButtons);
@@ -193,6 +231,7 @@ function buttonOff(buttons, numButton, player){
   }
 
   function outcome(){
+    gameState=1;
     if (rightButtons.length == 0){
       document.getElementById("winnerText").innerHTML = ">";
     }else{
@@ -200,4 +239,6 @@ function buttonOff(buttons, numButton, player){
     }
     document.getElementById("winner").style.opacity = "1";
     document.getElementById("winnerText").style.opacity = "1";
+    document.getElementById("startButton").innerHTML = "Try Again";
+
   }
