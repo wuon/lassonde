@@ -41,7 +41,7 @@ Template.grid.events({
 });
 
 listener.simple_combo("q", function() {
-    document.getElementById("q").style.backgroundColor = colorPicker();
+    gameLoop();
     scorePlus(1);
     console.log("q");
 });
@@ -83,6 +83,10 @@ function startgame(){
   console.log(leftButtons);
   document.getElementById("score2").innerHTML = score2;
   document.getElementById("score1").innerHTML = score1;
+  for(var i=0; i<=8; i++){
+    document.getElementById(i).style.backgroundColor = "#3e3e3e";
+    document.getElementById(i+9).style.backgroundColor = "#3e3e3e";
+  }
 }
 
 function scorePlus(player){
@@ -105,4 +109,38 @@ function initButtons(buttons){
     buttons[i] = i;
   }
   console.log(buttons);
+}
+
+function buttonPick(buttons, player){
+  var rand = Math.floor(Math.random() * buttons.length);
+  console.log(rand);
+  var randIndex = buttons[rand];
+  if(player == 1){
+      document.getElementById(rand).style.backgroundColor = colorPicker();
+  }else{
+      document.getElementById(rand+9).style.backgroundColor = colorPicker();
+  }
+  console.log("picking number")
+  console.log(randIndex);
+  buttons.splice(randIndex, 1);
+  console.log(buttons);
+
+  //button goes up and stays up
+  //cant be picked again since it's removed from the array
+}
+
+function buttonOff(buttons, numButton){
+  // on button press when button is not in array
+  if(buttons.indexOf(numButton) == -1) {
+    buttons.push(numButton);
+  }
+  else {
+      // button already off
+  }
+  console.log(buttons);
+}
+
+function gameLoop(){
+  buttonPick(rightButtons, 2);
+  buttonPick(leftButtons, 1);
 }

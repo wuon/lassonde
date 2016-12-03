@@ -1,3 +1,5 @@
+/*
+
 var leftbuttons = [];
 var rightbuttons =[];
 
@@ -34,3 +36,6 @@ function buttonOff(buttons, numButton){
 
   }
   test(leftbuttons);
+
+
+*/
