@@ -7,6 +7,7 @@
   {{> score}}
   {{> grid}}
   {{> start}}
+  {{> winner}}
 </body>
 
 <template name="hello">
@@ -64,4 +65,9 @@
 
 <template name="start">
   <button class="startButton" id="startButton">Start</button>
+</template>
+
+<template name="winner">
+  <p class="winner" id="winner">WINNER</p>
+  <p class="winnerText" id="winnerText">></p>
 </template>

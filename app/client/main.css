@@ -64,7 +64,26 @@ body {
   right: 233px;
 
 }
+.winner {
+  font-size:100px;
+  font-family: 'Montserrat', sans-serif, 'FontAwesome';
+  position: absolute;
+  margin: auto;
+  bottom: 450px;
+  right: 475px;
+  opacity: 0;
 
+}
+.winnerText {
+  font-size:100px;
+  font-family: 'Montserrat', sans-serif, 'FontAwesome';
+  position: absolute;
+  margin: auto;
+  bottom: 250px;
+  right: 665px;
+  opacity: 0;
+
+}
 .startButton{
   font-family: 'Montserrat', sans-serif, 'FontAwesome';
   border: 2px solid #3e3e3e;
