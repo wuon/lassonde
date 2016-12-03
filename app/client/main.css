@@ -1,5 +1,14 @@
 /* CSS declarations go here */
 @import url('http://fonts.googleapis.com/css?family=Montserrat:700');
+
+body {
+    background-color: rgba(#999797, 0.8);
+}
+.title{
+  font-size:75px;
+  font-family: 'Montserrat', sans-serif, 'FontAwesome';
+  text-align: center;
+}
 .left-btn-grid {
   width:340px;
   position: absolute;
@@ -34,4 +43,24 @@
   box-shadow: 0 10px 15px rgba(0,0,0,0.3);
   -webkit-transform: translate3d(-1px, -2px, 0);
   transform: translate3d(-1px, -2px, 0);
+}
+
+.score1 {
+  font-size:100px;
+  font-family: 'Montserrat', sans-serif, 'FontAwesome';
+  position: absolute;
+  margin: auto;
+  bottom: 450px;
+  left: 233px;
+
+}
+
+.score2 {
+  font-size:100px;
+  font-family: 'Montserrat', sans-serif, 'FontAwesome';
+  position: absolute;
+  margin: auto;
+  bottom: 450px;
+  right: 233px;
+
 }

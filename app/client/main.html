@@ -3,6 +3,8 @@
 </head>
 
 <body>
+  {{> title}}
+  {{> score}}
   {{> grid}}
 </body>
 
@@ -21,9 +23,13 @@
   </ul>
 </template>
 
+<template name="title">
+  <p class="title" id="title">COLOR SMASH</p>
+</template>
+
 <template name="grid">
   <div class="left-btn-grid">
-    <button class="item">q</button>
+    <button class="item" id="q">q</button>
     <button class="item">w</button>
     <button class="item">e</button>
     <button class="item">a</button>
@@ -43,5 +49,14 @@
     <button class="item">b</button>
     <button class="item">n</button>
     <button class="item">m</button>
+  </div>
+</template>
+
+<template name="score">
+  <div class="score1">
+    <p id="score1">0</p>
+  </div>
+  <div class="score2">
+    <p id="score2">0</p>
   </div>
 </template>
