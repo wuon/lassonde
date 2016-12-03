@@ -42,35 +42,52 @@ Template.grid.events({
 
 listener.simple_combo("q", function() {
   gameLoop();
-  scorePlus(1);
   console.log("q");
+  buttonOff(leftButtons, 0, 1)
 });
 listener.simple_combo("w", function() {
+  gameLoop();
   console.log("w");
+  buttonOff(leftButtons, 1, 1)
 });
 listener.simple_combo("e", function() {
+  gameLoop();
   console.log("e");
+  buttonOff(leftButtons, 2, 1)
 });
 listener.simple_combo("a", function() {
+  gameLoop();
   console.log("a");
+  buttonOff(leftButtons, 3, 1)
 });
 listener.simple_combo("s", function() {
+  gameLoop();
   console.log("s");
+  buttonOff(leftButtons, 4, 1)
 });
 listener.simple_combo("d", function() {
+  gameLoop();
   console.log("d");
+  buttonOff(leftButtons, 5, 1)
 });
 listener.simple_combo("z", function() {
+  gameLoop();
   console.log("z");
+  buttonOff(leftButtons, 6, 1)
 });
 listener.simple_combo("x", function() {
+  gameLoop();
   console.log("x");
+  buttonOff(leftButtons, 7, 1)
 });
 listener.simple_combo("c", function() {
+  gameLoop();
   console.log("c");
+  buttonOff(leftButtons, 8, 1)
 });
 listener.simple_combo("t", function() {
-  scorePlus(2);
+  gameLoop();
+  buttonOff(rightButtons, 0, 2)
   console.log("t");
 });
 
@@ -113,6 +130,8 @@ function initButtons(buttons){
 
 function buttonPick(buttons, player){
   var rand = Math.floor(Math.random() * buttons.length);
+  console.log("player " +player+ " random number is " +rand);
+  // var randIndex = buttons[rand];
   num = buttons.splice(rand, 1) -1 + 1;
   if(player == 1){
     document.getElementById(num).style.backgroundColor = colorPicker();
@@ -123,18 +142,27 @@ function buttonPick(buttons, player){
   //cant be picked again since it's removed from the array
 }
 
-function buttonOff(buttons, numButton){
+function buttonOff(buttons, numButton, player){
   // on button press when button is not in array
   if(buttons.indexOf(numButton) == -1) {
     buttons.push(numButton);
+    scorePlus(player);
   }
   else {
-      // button already off
-    }
-    console.log(buttons);
+    // button already off
   }
 
-  function gameLoop(){
-    buttonPick(rightButtons, 2);
-    buttonPick(leftButtons, 1);
+  if(player == 1){
+    document.getElementById(numButton).style.backgroundColor =  "#3e3e3e";
+  }else{
+    document.getElementById(numButton+9).style.backgroundColor =  "#3e3e3e";
   }
+
+  
+  console.log(buttons);
+}
+
+function gameLoop(){
+  buttonPick(rightButtons, 2);
+  buttonPick(leftButtons, 1);
+}
