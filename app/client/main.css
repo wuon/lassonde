@@ -64,3 +64,32 @@ body {
   right: 233px;
 
 }
+
+.startButton{
+  font-family: 'Montserrat', sans-serif, 'FontAwesome';
+  border: 2px solid #3e3e3e;
+  background: transparent;
+  width:20%;
+  outline: none;
+  transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1.5em;
+  color: #3e3e3e;
+  position: absolute;
+  margin: auto;
+  bottom: 150px;
+  left: 550px;
+  text-align: center;
+}
+  .startButton:hover{
+    cursor: pointer;
+    color: white;
+    background-color: #3e3e3e;
+  }
+.start-text{
+  margin-top: 10px;
+}

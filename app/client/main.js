@@ -7,6 +7,8 @@ var listener = new window.keypress.Listener();
 var score1 = 0, score2 = 0;
 var colors = ["#ffb3ba", "#d9b3ff", "#ffbaba", "#baffc9", "#b3bded"];
 var titleCount = 0;
+var rightButtons = [];
+var leftButtons = [];
 
 Template.hello.onCreated(function helloOnCreated() {
   // counter starts at 0
@@ -17,6 +19,12 @@ Template.hello.helpers({
   counter() {
     return Template.instance().counter.get();
   },
+});
+
+Template.start.events({
+  'click button'() {
+    startgame();
+  }
 });
 
 Template.hello.events({
@@ -69,6 +77,12 @@ listener.simple_combo("t", function() {
 function startgame(){
   score1 = 0;
   score2 = 0;
+  initButtons(rightButtons);
+  initButtons(leftButtons);
+  console.log(rightButtons);
+  console.log(leftButtons);
+  document.getElementById("score2").innerHTML = score2;
+  document.getElementById("score1").innerHTML = score1;
 }
 
 function scorePlus(player){
@@ -84,5 +98,11 @@ function scorePlus(player){
 function colorPicker(){
   var num = Math.floor((Math.random() * colors.length));
   return colors[num];
+}
 
+function initButtons(buttons){
+  for(var i = 0; i <=8; i++){
+    buttons[i] = i;
+  }
+  console.log(buttons);
 }
