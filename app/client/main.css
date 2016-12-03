@@ -1,1 +1,37 @@
 /* CSS declarations go here */
+@import url('http://fonts.googleapis.com/css?family=Montserrat:700');
+.left-btn-grid {
+  width:340px;
+  position: absolute;
+  margin: auto;
+  bottom: 100px;
+  left: 100px;
+}
+.right-btn-grid {
+  width:340px;
+  position: absolute;
+  margin: auto;
+  bottom: 100px;
+  right: 100px;
+
+}
+.item {
+  color:#fff;
+  font-size:17px;
+  font-family: 'Montserrat', sans-serif, 'FontAwesome';
+  text-transform:uppercase;
+  background-color:#333537;
+  padding:10px 10px;
+  border:0px;
+  margin:4px;
+  height:100px;
+  width:100px;
+  -webkit-transition: all 0.1s ease;
+ transition: all 0.1s ease;
+}
+.item:hover {
+  background-color: #333537;
+  box-shadow: 0 10px 15px rgba(0,0,0,0.3);
+  -webkit-transform: translate3d(-1px, -2px, 0);
+  transform: translate3d(-1px, -2px, 0);
+}

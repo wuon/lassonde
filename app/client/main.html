@@ -3,10 +3,7 @@
 </head>
 
 <body>
-  <h1>Welcome to Meteor!</h1>
-
-  {{> hello}}
-  {{> info}}
+  {{> grid}}
 </body>
 
 <template name="hello">
@@ -22,4 +19,29 @@
     <li><a href="https://docs.meteor.com" target="_blank">Read the Docs</a></li>
     <li><a href="https://forums.meteor.com" target="_blank">Discussions</a></li>
   </ul>
+</template>
+
+<template name="grid">
+  <div class="left-btn-grid">
+    <button class="item">q</button>
+    <button class="item">w</button>
+    <button class="item">e</button>
+    <button class="item">a</button>
+    <button class="item">s</button>
+    <button class="item">d</button>
+    <button class="item">z</button>
+    <button class="item">x</button>
+    <button class="item">c</button>
+  </div>
+  <div class="right-btn-grid">
+    <button class="item">t</button>
+    <button class="item">y</button>
+    <button class="item">u</button>
+    <button class="item">g</button>
+    <button class="item">h</button>
+    <button class="item">j</button>
+    <button class="item">b</button>
+    <button class="item">n</button>
+    <button class="item">m</button>
+  </div>
 </template>
