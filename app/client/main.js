@@ -108,20 +108,12 @@ function initButtons(buttons){
   for(var i = 0; i <=8; i++){
     buttons[i] = i;
   }
-  console.log(buttons);
+  
 }
 
 function buttonPick(buttons, player){
   var rand = Math.floor(Math.random() * buttons.length);
-  console.log("player " +player+ " random number is " +rand);
-  // var randIndex = buttons[rand];
-
-  console.log("array before splice");
-  console.log(buttons);
   num = buttons.splice(rand, 1) -1 + 1;
-  console.log("array after splice");
-  console.log(buttons);
-  console.log("num removed is " + num);
   if(player == 1){
     document.getElementById(num).style.backgroundColor = colorPicker();
   }else{
